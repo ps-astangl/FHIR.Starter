@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="jdk\" />
+        <Folder Include="jdk\"/>
         <Folder Include="output\metadata\**\*" CopyToOutputDirectory="PreserveNewest"/>
         <Folder Include="output\fhir\**\*" CopyToOutputDirectory="PreserveNewest"/>
         <Content Include="scripts\**\*" CopyToOutputDirectory="PreserveNewest"/>
@@ -24,5 +24,8 @@
         <Message Text="Downloading synthea-with-dependencies.jar..." Importance="High"/>
         <Exec Command="curl -L -o synthea-with-dependencies.jar https://github.com/synthetichealth/synthea/releases/download/master-branch-latest/synthea-with-dependencies.jar"/>
     </Target>
+    <ItemGroup>
+        <Content Include="synthea-with-dependencies.jar" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
 
 </Project>
