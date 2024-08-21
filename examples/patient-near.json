@@ -1,0 +1,22 @@
+{
+  "resource": {
+    "resourceType": "Patient",
+    "id": "other-patient-id",
+    "identifier": [
+      {
+        "system": "http://hospital.smarthealthit.org",
+        "value": "654321"
+      }
+    ],
+    "name": [
+      {
+        "family": "BLACKSTONE",
+        "given": [
+          "JASON"
+        ]
+      }
+    ],
+    "birthDate": "1985-04-22",
+    "gender": "male"
+  }
+}

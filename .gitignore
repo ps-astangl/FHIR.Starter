@@ -1,0 +1,6 @@
+/.idea/
+appsettings.Development.json
+obj
+bin
+Properties
+Properties/launchSettings.json

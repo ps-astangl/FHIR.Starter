@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Hl7.Fhir.R4" Version="5.9.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.7.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="jdk\" />
+        <Folder Include="output\metadata\**\*" CopyToOutputDirectory="PreserveNewest"/>
+        <Folder Include="output\fhir\**\*" CopyToOutputDirectory="PreserveNewest"/>
+        <Content Include="scripts\**\*" CopyToOutputDirectory="PreserveNewest"/>
+        <Content Include="jdk\**\*" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+    <Target Name="DownloadSynthea" BeforeTargets="BeforeBuild">
+        <Message Text="Downloading synthea-with-dependencies.jar..." Importance="High"/>
+        <Exec Command="curl -L -o synthea-with-dependencies.jar https://github.com/synthetichealth/synthea/releases/download/master-branch-latest/synthea-with-dependencies.jar"/>
+    </Target>
+
+</Project>
